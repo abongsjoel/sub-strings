@@ -42,7 +42,7 @@ The method can also handle multiple words. E.g.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/abongsjoel/caesar-cipher/issues).
+Feel free to check the [issues page](https://github.com/abongsjoel/sub-strings/issues).
 
 
 ## Show your support
