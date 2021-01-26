@@ -1,6 +1,10 @@
 def substrings(str, dictionary) 
   new_dictionary = sub_dictionary(str, dictionary)
-  new_dictionary
+  
+  new_dictionary.reduce(Hash.new(0)) do |result, word|
+    result[word] += 1
+    result
+  end
 end
 
 def sub_dictionary(str, dictionary)
