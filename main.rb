@@ -1,18 +1,23 @@
 def substrings(str, dictionary) 
-  new_dictionary = sub_dictionary(str, dictionary)
-  
-  new_dictionary.reduce(Hash.new(0)) do |result, word|
-    result[word.downcase] += 1
-    result
+  string_array = str.downcase.split(' ')
+  result = {}
+  dictionary.each do |word|
+    if str.downcase.include?(word.downcase)
+      count = 0
+      string_array.each do |string_word|
+        if string_word.include?(word.downcase)
+          count += 1
+        end
+      end
+      result[word] = count
+    end
   end
+  result
 end
 
-def sub_dictionary(str, dictionary)
-  dictionary.filter do |word|
-    str.include?(word.downcase)
-  end
-end
 
-dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit","Low"]
+dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
  
  p substrings("below", dictionary)
+
+ p substrings("Howdy partner, sit down! How's it going?", dictionary)
